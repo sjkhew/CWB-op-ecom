@@ -2,7 +2,8 @@
 CWB Operator E-Commerce Demo
 
 ## Requirement
-PHP 8.1 above with pdo_sqlite extension
+PHP 8.1 above with pdo_sqlite extension \
+Composer v2 (https://getcomposer.org/download/)
 
 ## Installation
 ```console
