@@ -8,12 +8,13 @@ PHP 8.1 above with pdo_sqlite extension
 ```console
 foo@bar:~$ git clone https://github.com/sjkhew/CWB-op-ecom.git
 foo@bar:~$ composer install
+foo@bar:~$ cp .env.example .env
 foo@bar:~$ php artisan key:generate
 foo@bar:~$ php artisan serve
 ```
 
 ## Admin Panel
-URL: http://127.0.0.1/admin-login
+URL: http://127.0.0.1/admin-login \
 Email: demo@cell-wellbeing.com / Password: demo
 
 ## Contributing
