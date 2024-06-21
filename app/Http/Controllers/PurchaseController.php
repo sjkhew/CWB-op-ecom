@@ -106,20 +106,24 @@ class PurchaseController extends Controller
         foreach($request->products as $key => $val){
             $product = Product::find($request->products[$key]);
             $selectedSku = $product->productSku->sku;
-            $response = $client->request('POST', env("BUSINESS_PORTAL_DEALER_URL"), [
-                'verify' => false,
-                'form_params' => [
-                    'action' => 'get-stock-balance',
-                    'time' => $time,
-                    'signature' => $signature,
-                    'member_id' => $memberId,
-                    'parent_id' => $parentId,
-                    'url_id' => $urlId,
-                    'sku' => $selectedSku,
-                ]
-            ]);
-            $result = json_decode($response->getbody());
 
+            // Simulate check stock balance with each SKU's with API
+            // $response = $client->request('POST', env('BUSINESS_PORTAL_DEALER_URL'), [
+            //     'verify' => false,
+            //     'form_params' => [
+            //         'action' => 'get-stock-balance',
+            //         'time' => $time,
+            //         'signature' => $signature,
+            //         'member_id' => $memberId,
+            //         'parent_id' => $parentId,
+            //         'url_id' => $urlId,
+            //         'sku' => $selectedSku,
+            //     ]
+            // ]);
+            // $result = json_decode($response->getbody());
+
+            // Example respond result
+            $result = (object) ['sku' => $selectedSku, 'bal' => 100];;
             try{
                 if($result->bal == 0){
                     $xErr++;
