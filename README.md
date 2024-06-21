@@ -14,6 +14,9 @@ foo@bar:~$ php artisan key:generate
 foo@bar:~$ php artisan serve
 ```
 
+## ECommerce
+Visit http://127.0.0.1/ after started "php artisan serve"
+
 ## Admin Panel
 URL: http://127.0.0.1/admin-login \
 Email: demo@cell-wellbeing.com / Password: demo
